@@ -1,0 +1,65 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="login">
+
+  <!-- Login Modal -->
+  <mat-card class="login-card" *ngIf="isFormVisible">
+    <mat-card-header class="login-header">
+      <h3>Login</h3>
+    </mat-card-header>
+    <br><br><br><br>
+    <mat-card-content>
+      <form [formGroup]="loginFormGroup" (ngSubmit)="onClickLogin(loginFormGroup.value)" class="login-form">
+        <mat-form-field class="login-full-width">
+          <input matInput type="number" placeholder="Employee Id" formControlName="employeeid" name="id">
+        </mat-form-field>
+        <p class="bg-danger" *ngIf="loginFormGroup.controls.employeeid.errors?.required && loginFormGroup.get('employeeid').touched">Employee Id is required</p>
+
+        <mat-form-field class="login-full-width">
+          <input matInput type="password" placeholder="Password" formControlName="password" name="pass">
+        </mat-form-field>
+        <p class="bg-danger" *ngIf="loginFormGroup.controls.password.errors?.required && loginFormGroup.get('password').touched">Password is required</p>
+
+        <mat-card-actions class="login-footer">
+          <button mat-button mat-raised-button class="btn" type="submit" [disabled]="!loginFormGroup.valid">Login</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Register Modal -->
+  <mat-card class="login-card" *ngIf="!isFormVisible">
+    <mat-card-header class="login-header">
+      <h3>SignUp</h3>
+    </mat-card-header>
+    <br><br><br><br>
+    <mat-card-content>
+      <form [formGroup]="registrationFormGroup" (ngSubmit)="onClickRegister(registrationFormGroup.value)" class="register-form">
+        <mat-form-field class="login-full-width">
+          <input matInput name="employeename" type="text" placeholder="Employee Name" value="" formControlName="employeename">
+        </mat-form-field>
+        <p class="bg-danger" *ngIf="registrationFormGroup.controls.employeename.errors?.required && registrationFormGroup.get('employeename').touched">Employee Name is required</p>
+
+        <mat-form-field class="login-full-width">
+          <input matInput type="number" placeholder="Employee Id" value="" formControlName="employeeid">
+        </mat-form-field>
+        <p class="bg-danger" *ngIf="registrationFormGroup.controls.employeeid.errors?.required && registrationFormGroup.controls.employeeid.touched">Employee Id is required</p>
+
+        <div [formGroup]="passwordFormGroup">
+          <mat-form-field class="login-full-width">
+            <input matInput type="password" placeholder="Create Password" value="" formControlName="createpassword">
+          </mat-form-field>
+          <p class="bg-danger" *ngIf="passwordFormGroup.controls.createpassword.errors?.required && passwordFormGroup.controls.createpassword.touched">Password is required</p>
+
+          <mat-form-field class="login-full-width">
+            <input matInput type="password" placeholder="Confirm Password" value="" formControlName="confirmpassword">
+          </mat-form-field>
+          <p class="bg-danger" *ngIf="passwordFormGroup.errors?.doesMatchPassword">Password does not match</p>
+        </div>
+
+        <mat-card-actions class="login-footer">
+          <button mat-button mat-raised-button class="btn" type="submit" [disabled]="!registrationFormGroup.valid">SignUp</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

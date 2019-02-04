@@ -1,0 +1,17 @@
+.skill-card {
+  text-align: center;
+}
+
+.mat-form-field {
+  width: 50%;
+}
+
+.skill-form{
+    margin-top: 50px;
+}
+
+.btn {
+  margin-top: 100px;
+  background-color: #00091a;
+  color: wheat;
+}
