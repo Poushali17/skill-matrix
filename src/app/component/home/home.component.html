@@ -4,17 +4,17 @@
     <br><br>
     <mat-list>
       <mat-list-item>
-        <a [routerLink]="[{ outlets: { content: ['home'] } }]" [queryParams]="{displayContent: 'true'}">
+        <a [routerLink]="[{ outlets: { content: ['home'] } }]" [queryParams]="{displayContent: 'true'}" routerLinkActive="active">
           <mat-icon>home</mat-icon><span>Home</span></a>
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>
-        <a [routerLink]="[{ outlets: { content: ['editprofile'] } }]" [queryParams]="{displayContent: 'true'}">
+        <a [routerLink]="[{ outlets: { content: ['editprofile'] } }]" [queryParams]="{displayContent: 'false'}" routerLinkActive="active">
           <mat-icon>edit</mat-icon><span>Edit Profile</span></a>
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>
-        <a [routerLink]="[{ outlets: { content: ['addSkill'] } }]" [queryParams]="{displayContent: 'false'}">
+        <a [routerLink]="[{ outlets: { content: ['addSkill'] } }]" [queryParams]="{displayContent: 'false'}" routerLinkActive="active">
           <mat-icon>add_circle_outline</mat-icon><span>Add Skill</span></a>
       </mat-list-item>
       <mat-divider></mat-divider>
@@ -28,7 +28,7 @@
 
   <mat-sidenav-content class="main_content">
     <!--<div [style.display]="displayContent ? 'block' : 'none'">-->
-    <div *ngIf = "displayContent">
+    <div *ngIf = "displayContent == true">
       <div style="width: 100%">
         <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">

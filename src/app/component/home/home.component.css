@@ -58,3 +58,11 @@ table td {
 .sidenav mat-list-item a span{
     padding-left: 5px;
 }
+
+.mat-divider {
+    border-top-color: wheat;
+}
+
+.active {
+    color: silver !important;
+}

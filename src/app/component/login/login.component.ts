@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
     let navigationExtras: NavigationExtras = {
       queryParams: {
         "employeeid": user.employeeid,
-        "displayContent": true
+        // "displayContent": true
         //  "password": user.password
       }
     };
