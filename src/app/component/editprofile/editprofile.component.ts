@@ -20,7 +20,7 @@ export class EditprofileComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Edit Profile Methid
+  // Edit Profile Methosd
   editProfile(profilevalue) {
     console.log(profilevalue);
   }

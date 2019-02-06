@@ -18,4 +18,8 @@ export class SkillComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Add Skill Methid
+  addSkill(skillvalue) {
+    console.log(skillvalue);
+  }
 }
