@@ -22,7 +22,7 @@ export class EditprofileComponent implements OnInit {
 
   // Edit Profile Methid
   editProfile(profilevalue) {
-
+    console.log(profilevalue);
   }
 
 }

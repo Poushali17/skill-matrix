@@ -27,4 +27,8 @@ export class SkillService {
   addUser(user) {
     return this.http.post(`${this.uri}/user/add`, user);
   }
+
+  updateProfile(profile) {
+    return this.http.post(`${this.uri}/profile/update`, profile);
+  }
 }

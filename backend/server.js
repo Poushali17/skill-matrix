@@ -56,8 +56,21 @@ router.route('/user/add').post((req, res) => {
     //         res.status(400).send('Failed to create new record');
     //     });
     connection.collection('user').insert(user);
-    });
+});
 
-    app.use('/', router);
+//update user profile
+router.route('/user/add').post((req, res) => {
+    let user = new UserSchema(req.body);
+    // user.save()
+    //     .then(user => {
+    //         res.status(200).json('user', 'Added successfully');
+    //     })
+    //     .catch(err => {
+    //         res.status(400).send('Failed to create new record');
+    //     });
+    connection.collection('user').insert(user);
+});
 
-    app.listen(4000, () => console.log('Express server running on port 4000'));
+app.use('/', router);
+
+app.listen(4000, () => console.log('Express server running on port 4000'));
