@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 
 import UserSchema from './models/usermodel';
 // import registerSchema from './models/usermodel';
+import ProfileSchema from './models/profilemodel';
 
 const app = express();
 const router = express.Router();
@@ -59,16 +60,35 @@ router.route('/user/add').post((req, res) => {
 });
 
 //update user profile
-router.route('/user/add').post((req, res) => {
-    let user = new UserSchema(req.body);
-    // user.save()
-    //     .then(user => {
-    //         res.status(200).json('user', 'Added successfully');
-    //     })
-    //     .catch(err => {
-    //         res.status(400).send('Failed to create new record');
-    //     });
-    connection.collection('user').insert(user);
+router.route('/user/update/:id').post((req, res) => {
+    ProfileSchema.findById(req.params.id, (err, profile) => {
+        if (!profile)
+            return next(new Error('Could not load document'));
+        else {
+            profile.employeename = req.body.employeename;
+            profile.designation = req.body.designation;
+            profile.project = req.body.project;
+            profile.password = req.body.password;
+
+            profile.save()
+                .then(profile => {
+                    res.status(200).json('user', 'Added successfully');
+                })
+                .catch(err => {
+                    res.status(400).send('Failed to create new record');
+                });
+        }
+    });
+});
+
+// delete user
+router.route('/user/delete/:id').get((req, res) => {
+    UserSchema.findByIdAndRemove({ _id: req.params.id }, (err, user) => {
+        if (err)
+            res.json(err);
+        else
+            res.json('Removed Successfully');
+    });
 });
 
 app.use('/', router);
