@@ -49,13 +49,13 @@ router.route('/user/:employeeid').get((req, res) => {
 //add new user
 router.route('/user/add').post((req, res) => {
     let user = new UserSchema(req.body);
-    // user.save()
-    //     .then(user => {
-    //         res.status(200).json('user', 'Added successfully');
-    //     })
-    //     .catch(err => {
-    //         res.status(400).send('Failed to create new record');
-    //     });
+    user.save()
+        .then(user => {
+            res.status(200).json('user', 'Added successfully');
+        })
+        .catch(err => {
+            res.status(400).send('Failed to create new record');
+        });
     connection.collection('user').insert(user);
 });
 
