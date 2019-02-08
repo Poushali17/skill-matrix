@@ -24,13 +24,13 @@ export class SkillService {
   // }
 
   // Service to add users
-  addUser(employeeid, employeename, password) {
-    const user = {
-      employeeid: employeeid,
-      employeename: employeename,
-      password: password
+  addUser(user) {
+    const add_user = {
+      employeeid: user.employeeid,
+      employeename: user.employeename,
+      password: user.password
     };
-    return this.http.post(`${this.uri}/user/add`, user);
+    return this.http.post(`${this.uri}/user/add`, add_user);
   }
 
    // Service to update user profile
