@@ -43,4 +43,9 @@ export class SkillService {
     };
     return this.http.post(`${this.uri}/profile/update/${id}`, profile);
   }
+
+  // Service to delete user 
+  deleteUser(id) {
+    return this.http.get(`${this.uri}/user/delete/${id}`);
+  }
 }
