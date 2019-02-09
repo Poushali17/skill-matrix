@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   passwordFormGroup: FormGroup;
   employeeid: Number;
   password: String;
-  message = "Loggedin Successfully";
+  login_message = "Loggedin Successfully";
+  reg_message = "Registered Successfully";
   action = "OK";
   loginDetails: Object;
   constructor(private router: Router, private formBuilder: FormBuilder, private skillService: SkillService, public snackBar: MatSnackBar) {
@@ -68,7 +69,7 @@ export class LoginComponent implements OnInit {
       }
     };
     this.router.navigate(['home'], navigationExtras);
-    this.snackBar.open(this.message, this.action, {
+    this.snackBar.open(this.login_message, this.action, {
       duration: 5000,
     });
 
@@ -79,7 +80,7 @@ export class LoginComponent implements OnInit {
   }
 
   onClickRegister(registrationvalue) {
-    alert('Registered!!');
+    // alert('Registered!!');
 
     const user = {
       employeename: registrationvalue.employeename,
@@ -88,7 +89,19 @@ export class LoginComponent implements OnInit {
     }
     this.skillService.addUser(user).subscribe((data) => {
       console.log(data);
-    })
+    });
+
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "employeeid": user.employeeid,
+        // "displayContent": true
+        //  "password": user.password
+      }
+    };
+    this.router.navigate(['home'], navigationExtras);
+    this.snackBar.open(this.reg_message, this.action, {
+      duration: 5000,
+    });
   }
 
 }

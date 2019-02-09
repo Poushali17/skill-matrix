@@ -4,11 +4,11 @@ const schema = mongoose.Schema;
 
 //Create login schema
 let RegisterSchema = new schema({
-    employeename: {
-        type: String
-    },
     employeeId: {
         type: Number
+    },
+    employeename: {
+        type: String
     },
     password: {
         type: String
