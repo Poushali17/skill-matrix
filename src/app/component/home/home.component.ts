@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   data: any;
   userDetails: User[];
   name: Object;
+  id: Object;
 
   constructor(private route: ActivatedRoute, private router: Router, private skillService: SkillService) {
     // this.displayContent = route.snapshot.params['displayContent'];
@@ -57,7 +58,8 @@ export class HomeComponent implements OnInit {
       console.log(this.userDetails);
       let username = this.userDetails[0].employeename;
       this.name = username.split(" ", 1);
-      console.log(this.name);
+      this.id = this.userDetails[0].employeeid;
+      console.log(this.name, this.id);
     });
   }
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));

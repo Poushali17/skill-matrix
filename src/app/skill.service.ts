@@ -9,6 +9,7 @@ export class SkillService {
   uri = 'http://localhost:4000';
 
   constructor(private http: HttpClient) { }
+
   // Service to get all user details
   getUserDetails() {
     return this.http.get(`${this.uri}/user`);
@@ -34,12 +35,12 @@ export class SkillService {
   }
 
    // Service to update user profile
-  updateProfile(id, employeename, designation, project, password) {
+  updateProfile(id, user_profile) {
     const profile = {
-      employeename: employeename,
-      designation: designation,
-      project: project,
-      password: password
+      employeename: user_profile.employeename,
+      designation: user_profile.designation,
+      project: user_profile.project,
+      password: user_profile.password
     };
     return this.http.post(`${this.uri}/profile/update/${id}`, profile);
   }

@@ -9,7 +9,7 @@
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>
-        <a [routerLink]="[{ outlets: { content: ['editprofile'] } }]" [queryParams]="{displayContent: 'false'}" routerLinkActive="active">
+        <a [routerLink]="[{ outlets: { content: ['editprofile'] } }]" [queryParams]="{displayContent: 'false'}" [queryParams]="{id: id}" routerLinkActive="active">
           <mat-icon>edit</mat-icon><span>Edit Profile</span></a>
       </mat-list-item>
       <mat-divider></mat-divider>
