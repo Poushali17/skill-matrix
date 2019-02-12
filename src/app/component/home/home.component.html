@@ -9,12 +9,12 @@
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>
-        <a [routerLink]="[{ outlets: { content: ['editprofile'] } }]" [queryParams]="{displayContent: 'false'}" [queryParams]="{id: id}" routerLinkActive="active">
+        <a [routerLink]="[{ outlets: { content: ['editprofile'] } }]" [queryParams]="{id: id, displayContent: 'false'}" [queryParams]="{displayContent: 'false'}" routerLinkActive="active">
           <mat-icon>edit</mat-icon><span>Edit Profile</span></a>
       </mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item>
-        <a [routerLink]="[{ outlets: { content: ['addSkill'] } }]" [queryParams]="{displayContent: 'false'}" routerLinkActive="active">
+        <a [routerLink]="[{ outlets: { content: ['addSkill'] } }]" [queryParams]="{id: id, displayContent: 'false'}" routerLinkActive="active">
           <mat-icon>add_circle_outline</mat-icon><span>Add Skill</span></a>
       </mat-list-item>
       <mat-divider></mat-divider>

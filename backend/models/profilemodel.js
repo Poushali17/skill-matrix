@@ -4,9 +4,9 @@ const schema = mongoose.Schema;
 
 //Create login schema
 let ProfileSchema = new schema({
-    _id: {
-        type: String
-    },
+    // _id: {
+    //     type: String
+    // },
     employeename: {
         type: String
     },

@@ -60,7 +60,7 @@ router.route('/user/add').post((req, res) => {
 });
 
 //update user profile
-router.route('/user/update/:id').post((req, res) => {
+router.route('/profile/update/:id').post((req, res) => {
     ProfileSchema.findById(req.params.id, (err, profile) => {
         if (!profile)
             return next(new Error('Could not load document'));
@@ -72,10 +72,10 @@ router.route('/user/update/:id').post((req, res) => {
 
             profile.save()
                 .then(profile => {
-                    res.status(200).json('user', 'Added successfully');
+                    res.status(200).json('Updated successfully');
                 })
                 .catch(err => {
-                    res.status(400).send('Failed to create new record');
+                    res.status(400).send('Update failed');
                 });
         }
     });
