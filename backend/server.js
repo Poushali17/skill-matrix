@@ -9,7 +9,6 @@ import ProfileSchema from './models/profilemodel';
 
 const app = express();
 const router = express.Router();
-var id;
 
 app.get('/', (req, res) => res.send('Skill Matrix'));
 
