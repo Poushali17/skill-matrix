@@ -60,7 +60,8 @@ router.route('/user/add').post((req, res) => {
 
 //update user profile
 router.route('/profile/update/:id').post((req, res) => {
-    ProfileSchema.findById(req.params.id, (err, profile) => {
+    let query = { 'employeeid': req.params.id };
+    ProfileSchema.findAndModify(query, (err, profile) => {
         if (!profile)
             return next(new Error('Could not load document'));
         else {
