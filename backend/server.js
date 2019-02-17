@@ -65,10 +65,12 @@ router.route('/profile/update/:id').post((req, res) => {
         if (!profile)
             return next(new Error('Could not load document'));
         else {
-            profile.employeename = req.body.employeename;
-            profile.designation = req.body.designation;
-            profile.project = req.body.project;
-            profile.password = req.body.password;
+            let profile = new ProfileSchema ({
+            employeename : req.body.employeename,
+            designation : req.body.designation,
+            project : req.body.project,
+            password : req.body.password
+            });
 
             profile.save()
                 .then(profile => {
