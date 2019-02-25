@@ -47,7 +47,7 @@ router.route('/user/:employeeid').get((req, res) => {
 
 //add new user
 router.route('/user/add').post((req, res) => {
-    let user = new RegisterSchema(req.body);
+    let user = new UserSchema(req.body);
     user.save()
         .then(user => {
             res.status(200).json('user', 'Added successfully');
@@ -61,7 +61,7 @@ router.route('/user/add').post((req, res) => {
 //update user profile
 router.route('/profile/update/:id').post((req, res) => {
     let query = { 'employeeid': req.params.id };
-    ProfileSchema.findAndModify(query, (err, profile) => {
+    UserSchema.findByIdAndUpdate(query, (err, profile) => {
         if (!profile)
             return next(new Error('Could not load document'));
         else {

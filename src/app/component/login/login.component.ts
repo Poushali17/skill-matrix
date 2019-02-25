@@ -87,6 +87,8 @@ export class LoginComponent implements OnInit {
     const user = {
       employeename: registrationvalue.employeename,
       employeeid: registrationvalue.employeeid,
+      designation: registrationvalue.designation,
+      project: registrationvalue.project,
       password: registrationvalue.passwordFormGroup.createpassword
     }
     this.skillService.addUser(user).subscribe((data) => {

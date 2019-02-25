@@ -13,6 +13,12 @@ let UserSchema = new schema({
     employeename: {
         type: String
     },
+    designation: {
+        type: String
+    },
+    project: {
+        type: String
+    },
     password: {
         type: String
     }

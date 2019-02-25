@@ -29,6 +29,8 @@ export class SkillService {
     const add_user = {
       employeeid: user.employeeid,
       employeename: user.employeename,
+      designation: user.designation,
+      project: user.project,
       password: user.password
     };
     return this.http.post(`${this.uri}/user/add`, add_user);
