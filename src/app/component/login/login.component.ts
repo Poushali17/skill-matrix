@@ -42,6 +42,8 @@ export class LoginComponent implements OnInit {
     this.registrationFormGroup = this.formBuilder.group({
       employeename: ['', Validators.required],
       employeeid: ['', Validators.required],
+      designation: ['', Validators.required],
+      project: ['', Validators.required],
       passwordFormGroup: this.passwordFormGroup
     });
 

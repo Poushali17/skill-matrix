@@ -2,16 +2,22 @@
  {
   "employeeid": 485880,
   "employeename": "Poushali Saha",
+  "designation": "Programmer Analyst",
+  "project": "RCI",
   "password": "poushali"
  },
  {
   "employeeid": 460730,
   "employeename": "Reeshav Mukherjee",
+  "designation": "Associate",
+  "project": "WVO",
   "password": "reeshav"
  },
  {
   "employeeid": 485868,
   "employeename": "Moulika Mukherjee",
+  "designation": "Programmer Analyst Trainee",
+  "project": "RCI",
   "password": "moulika"
  }
 ]

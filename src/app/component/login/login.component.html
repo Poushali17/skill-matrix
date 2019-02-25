@@ -11,12 +11,14 @@
         <mat-form-field class="login-full-width">
           <input matInput type="number" placeholder="Employee Id" formControlName="employeeid" name="id">
         </mat-form-field>
-        <p class="bg-danger" *ngIf="loginFormGroup.controls.employeeid.errors?.required && loginFormGroup.get('employeeid').touched">Employee Id is required</p>
+        <p class="bg-danger" *ngIf="loginFormGroup.controls.employeeid.errors?.required && loginFormGroup.get('employeeid').touched">Employee
+          Id is required</p>
 
         <mat-form-field class="login-full-width">
           <input matInput type="password" placeholder="Password" formControlName="password" name="pass">
         </mat-form-field>
-        <p class="bg-danger" *ngIf="loginFormGroup.controls.password.errors?.required && loginFormGroup.get('password').touched">Password is required</p>
+        <p class="bg-danger" *ngIf="loginFormGroup.controls.password.errors?.required && loginFormGroup.get('password').touched">Password
+          is required</p>
 
         <mat-card-actions class="login-footer">
           <button mat-button mat-raised-button class="btn" type="submit" [disabled]="!loginFormGroup.valid">Login</button>
@@ -36,18 +38,33 @@
         <mat-form-field class="login-full-width">
           <input matInput name="employeename" type="text" placeholder="Employee Name" value="" formControlName="employeename">
         </mat-form-field>
-        <p class="bg-danger" *ngIf="registrationFormGroup.controls.employeename.errors?.required && registrationFormGroup.get('employeename').touched">Employee Name is required</p>
+        <p class="bg-danger" *ngIf="registrationFormGroup.controls.employeename.errors?.required && registrationFormGroup.get('employeename').touched">Employee
+          Name is required</p>
 
         <mat-form-field class="login-full-width">
           <input matInput type="number" placeholder="Employee Id" value="" formControlName="employeeid">
         </mat-form-field>
-        <p class="bg-danger" *ngIf="registrationFormGroup.controls.employeeid.errors?.required && registrationFormGroup.controls.employeeid.touched">Employee Id is required</p>
+        <p class="bg-danger" *ngIf="registrationFormGroup.controls.employeeid.errors?.required && registrationFormGroup.controls.employeeid.touched">Employee
+          Id is required</p>
+
+        <mat-form-field class="login-full-width">
+          <input matInput type="text" placeholder="Designation" value="" formControlName="designation">
+        </mat-form-field>
+        <p class="bg-danger" *ngIf="registrationFormGroup.controls.designation.errors?.required && registrationFormGroup.get('designation').touched">
+          Designation is required</p>
+
+        <mat-form-field class="login-full-width">
+          <input matInput name="project" type="text" placeholder="Project" value="" formControlName="project">
+        </mat-form-field>
+        <p class="bg-danger" *ngIf="registrationFormGroup.controls.project.errors?.required && registrationFormGroup.get('project').touched">
+          Project is required</p>
 
         <div [formGroup]="passwordFormGroup">
           <mat-form-field class="login-full-width">
             <input matInput type="password" placeholder="Create Password" value="" formControlName="createpassword">
           </mat-form-field>
-          <p class="bg-danger" *ngIf="passwordFormGroup.controls.createpassword.errors?.required && passwordFormGroup.controls.createpassword.touched">Password is required</p>
+          <p class="bg-danger" *ngIf="passwordFormGroup.controls.createpassword.errors?.required && passwordFormGroup.controls.createpassword.touched">Password
+            is required</p>
 
           <mat-form-field class="login-full-width">
             <input matInput type="password" placeholder="Confirm Password" value="" formControlName="confirmpassword">
