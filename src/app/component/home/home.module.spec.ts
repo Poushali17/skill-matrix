@@ -1,13 +1,13 @@
-import { HomeModule } from './home.module';
+import { HomeComponent } from './home.component';
 
-describe('HomeModule', () => {
-  let homeModule: HomeModule;
+describe('HomeComponent', () => {
+  let HomeComponent: HomeComponent;
 
-  beforeEach(() => {
-    homeModule = new HomeModule();
-  });
+  // beforeEach(() => {
+  //   HomeComponent = new HomeComponent();
+  // });
 
   it('should create an instance', () => {
-    expect(homeModule).toBeTruthy();
+    expect(HomeComponent).toBeTruthy();
   });
 });

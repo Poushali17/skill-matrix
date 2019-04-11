@@ -4,8 +4,6 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 
 import UserSchema from './models/usermodel';
-import RegisterSchema from './models/usermodel';
-import ProfileSchema from './models/profilemodel';
 
 const app = express();
 const router = express.Router();
@@ -48,14 +46,15 @@ router.route('/user/:employeeid').get((req, res) => {
 //add new user
 router.route('/user/add').post((req, res) => {
     let user = new UserSchema(req.body);
-    user.save()
-        .then(user => {
-            res.status(200).json('user', 'Added successfully');
-        });
-        // .catch(err => {
-        //     res.status(400).send('Failed to create new record');
-        // });
-    connection.collection('user').insert(user);
+    // user.save()
+    //     .then(user => {
+    //         res.status(200).json('user', 'Added successfully');
+    //     })
+    //     .catch(err => {
+    //         res.status(400).send('Failed to create new record');
+    //     });
+    // connection.collection('user').insert(user);
+    UserSchema.push(user);
 });
 
 //update user profile
@@ -65,7 +64,7 @@ router.route('/profile/update/:id').post((req, res) => {
         if (!profile)
             return next(new Error('Could not load document'));
         else {
-            let profile = new ProfileSchema ({
+            let profile = new UserSchema ({
             employeename : req.body.employeename,
             designation : req.body.designation,
             project : req.body.project,

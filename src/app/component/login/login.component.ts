@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
         //  "password": user.password
       }
     };
-    this.router.navigate(['welcome'], navigationExtras);
+    this.router.navigate(['welcome']);
     this.snackBar.open(this.reg_message, this.action, {
       duration: 5000,
     });
